@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.File;
 import java.util.HashSet;
 
@@ -49,7 +50,7 @@ public class Window extends JFrame {
         JButton button1 = new JButton("<");
         JButton button2 = new JButton("||");
         JButton button3 = new JButton(">");
-        JButton openFileButton = new JButton("Ouvrir un fichier");
+        JButton openFileButton = new JButton("Open file");
         buttonPanel.add(openFileButton);
         //buttonPanel.add(button1);
         //buttonPanel.add(button2);
@@ -58,7 +59,6 @@ public class Window extends JFrame {
 
         add(buttonPanel, BorderLayout.NORTH);
         add(cellsView, BorderLayout.CENTER);
-
 
         openFileButton.addActionListener(new ActionListener() {
             @Override
@@ -85,6 +85,8 @@ public class Window extends JFrame {
             File selectedFile = fileChooser.getSelectedFile();
             game.readLifFile(selectedFile.getAbsolutePath());
         }
+        requestFocusInWindow();
+
     }
 
     public void start(){
