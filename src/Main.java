@@ -29,8 +29,8 @@ public class Main {
         };
 
         //rule = new Conway(1000,1000);
-        rule.genPrimordialSoup(0, 0, n-1, n-1);
-        Game game = new Game(rule,30);
+        //rule.genPrimordialSoup(0, 0, n-1, n-1);
+        Game game = new Game(rule,10);
 
 
         game.start();
