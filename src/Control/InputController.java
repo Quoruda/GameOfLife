@@ -45,6 +45,8 @@ public class InputController implements KeyListener {
             }else{
                 window.getCellsView().colorSelected = Color.WHITE;
             }
+        }else if(e.getKeyCode() == KeyEvent.VK_G){
+            window.getCellsView().showGrid = !window.getCellsView().showGrid;
         }else{
         }
 

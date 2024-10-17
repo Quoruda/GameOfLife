@@ -16,6 +16,7 @@ public class CellsView extends JPanel {
     double scaleFactor = 1;
     double scaleSpeed = 0.1;
     public Color colorSelected = Color.WHITE;
+    public boolean showGrid = true;
 
 
     public CellsView(int width, int height, Game game) {
@@ -36,7 +37,7 @@ public class CellsView extends JPanel {
 
         paintCells(g2d);
 
-        if(scaleFactor > 0) paintGrid(g);
+        if(scaleFactor > 0 && showGrid) paintGrid(g);
 
     }
 
