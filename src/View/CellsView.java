@@ -41,12 +41,28 @@ public class CellsView extends JPanel {
 
     }
 
+    public int getXmin(){
+        return (int) (offset.getX()/(cells_size*scaleFactor))-1;
+    }
+
+    public int getYmin(){
+        return (int) (offset.getY()/(cells_size*scaleFactor))-1;
+    }
+
+    public int getXmax(){
+        return (int) ((offset.getX()+width)/(cells_size*scaleFactor))+1;
+    }
+
+    public int getYmax(){
+        return (int) ((offset.getY()+height)/(cells_size*scaleFactor))+1;
+    }
+
     public void paintCells(Graphics g) {
         double scaledCellsSize = cells_size * scaleFactor;
-        int xmin = (int) (offset.getX()/scaledCellsSize)-1;
-        int ymin = (int) (offset.getY()/scaledCellsSize)-1;
-        int xmax = (int) ((offset.getX()+width)/scaledCellsSize)+1;
-        int ymax = (int) ((offset.getY()+height)/scaledCellsSize)+1;
+        int xmin = getXmin();
+        int ymin = getYmin();
+        int xmax = getXmax();
+        int ymax = getYmax();
         HashMap<Point, Color> colors = game.getRule().getColor(xmin, ymin, xmax, ymax);
         Color c;
         for(Point p : colors.keySet()) {

@@ -11,6 +11,8 @@ import java.util.Set;
 
 public abstract class Rule {
 
+
+
     public abstract void next();
 
     public abstract void genPrimordialSoup(int minX, int minY, int width, int height);

@@ -47,11 +47,13 @@ public class Window extends JFrame {
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-        JButton button1 = new JButton("<");
-        JButton button2 = new JButton("||");
-        JButton button3 = new JButton(">");
+        //JButton button1 = new JButton("<");
+        //JButton button2 = new JButton("||");
+        //JButton button3 = new JButton(">");
         JButton openFileButton = new JButton("Open file");
+        JButton primordialSoupButton = new JButton("Primordial Soup");
         buttonPanel.add(openFileButton);
+        buttonPanel.add(primordialSoupButton);
         //buttonPanel.add(button1);
         //buttonPanel.add(button2);
         //buttonPanel.add(button3);
@@ -64,6 +66,12 @@ public class Window extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 openFile();
+            }
+        });
+        primordialSoupButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                game.getRule().genPrimordialSoup(cellsView.getXmin(), cellsView.getYmin(), cellsView.getXmax(), cellsView.getYmax());
             }
         });
 

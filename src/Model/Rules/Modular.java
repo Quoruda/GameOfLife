@@ -73,11 +73,12 @@ public abstract class Modular extends Rule {
 
     @Override
     public void genPrimordialSoup(int minX, int minY, int width, int height) {
+        reset();
         Random random = new Random();
         for(int x = minX; x < minX+width; x++){
             for(int y = minY; y < minY+height; y++){
                 if(random.nextBoolean()){
-                    states[y][x] = true;
+                    states[Math.floorMod(y,height)][Math.floorMod(x,width)] = true;
                 }
             }
         }
