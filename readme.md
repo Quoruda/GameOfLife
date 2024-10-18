@@ -24,11 +24,13 @@ If the simulation is paused, you can change the state of the cells by clicking o
 ![glider](images/glider.gif)
 
 With the `Primordial Soup` button, you can generate a random configuration.
-
+And with the `Clear` button, you can clear the grid.
 ## Load files
 
 With the `Load File` button, you can load a file with the extension `.lif`.
 
-
+### Example of file
+`pinball.lif`
 ![pinball](images/pinball.gif)
+`wing.lif`
 ![wing](images/wing.gif)
