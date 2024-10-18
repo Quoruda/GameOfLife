@@ -43,7 +43,7 @@ public class Game {
                 System.out.println("tick: " + tick + " nbAlive:" + rule.size());
             }
         });
-        timerInfo.start();
+        //timerInfo.start();
     }
 
     public void setTps(int tps) {
