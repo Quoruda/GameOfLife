@@ -32,6 +32,8 @@ public class Window extends JFrame {
     private InputController inputController;
     private MouseController mouseController;
 
+    public JButton openFileButton, primordialSoupButton, clearButton;
+
     public Window(int width, int height, Game game) {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(width, height+BUTTON_HEIGHT);
@@ -47,13 +49,12 @@ public class Window extends JFrame {
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-        //JButton button1 = new JButton("<");
-        //JButton button2 = new JButton("||");
-        //JButton button3 = new JButton(">");
-        JButton openFileButton = new JButton("Open file");
-        JButton primordialSoupButton = new JButton("Primordial Soup");
+        openFileButton = new JButton("Open file");
+        primordialSoupButton = new JButton("Primordial Soup");
+        clearButton = new JButton("Clear");
         buttonPanel.add(openFileButton);
         buttonPanel.add(primordialSoupButton);
+        buttonPanel.add(clearButton);
         //buttonPanel.add(button1);
         //buttonPanel.add(button2);
         //buttonPanel.add(button3);
@@ -61,19 +62,6 @@ public class Window extends JFrame {
 
         add(buttonPanel, BorderLayout.NORTH);
         add(cellsView, BorderLayout.CENTER);
-
-        openFileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openFile();
-            }
-        });
-        primordialSoupButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                game.getRule().genPrimordialSoup(cellsView.getXmin(), cellsView.getYmin(), cellsView.getXmax(), cellsView.getYmax());
-            }
-        });
 
         timer = new Timer(getDelay(), new ActionListener() {
             @Override
@@ -85,7 +73,7 @@ public class Window extends JFrame {
         });
     }
 
-    private void openFile() {
+    public void openFile() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setFileFilter(new FileNameExtensionFilter("Life Files (*.lif)", "lif"));
         int returnValue = fileChooser.showOpenDialog(this);
@@ -166,6 +154,12 @@ public class Window extends JFrame {
 
     public CellsView getCellsView(){
         return cellsView;
+    }
+
+    public void setActionListener(ActionListener listener) {
+        openFileButton.addActionListener(listener);
+        primordialSoupButton.addActionListener(listener);
+        clearButton.addActionListener(listener);
     }
 
 }

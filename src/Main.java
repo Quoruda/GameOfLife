@@ -1,3 +1,4 @@
+import Control.ButtonListener;
 import Control.InputController;
 import Control.MouseController;
 import Model.Rules.*;
@@ -39,6 +40,7 @@ public class Main {
             Window window = new Window(600, 600, game);
             InputController inputController = new InputController(window, game);
             MouseController mouseController = new MouseController(window);
+            ButtonListener buttonListener = new ButtonListener(window, game);
             window.setFPS(30);
             window.start();
         });
