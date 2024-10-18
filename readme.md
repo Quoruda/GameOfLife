@@ -1,5 +1,7 @@
 # Game of life
 
+![game of life](images/screen.png)
+
 ## Description
 This is a simple implementation of the Game of Life in Java.
 For now, the rule respect the original rule of Conway's Game of Life, 
@@ -10,12 +12,12 @@ I would like to add a feature to change the rule thanks to the navbar.
 
 You can interact with the simulation with the following inputs:
 
-| Input               | Actions                 |
-|---------------------|-------------------------|
-| G                   | show/hide grid          |
-| Space               | pause/resume simulation |
-| directionnal arrows | move                    |
-| Mouse wheel         | zoom                    |
+| Input              | Actions                 |
+|--------------------|-------------------------|
+| G                  | show/hide grid          |
+| Space              | pause/resume simulation |
+| Directional arrows | move                    |
+| Mouse wheel        | zoom                    |
 
 
 ## Edit
