@@ -33,6 +33,9 @@ With the `Load File` button, you can load a file with the extension `.lif`.
 
 ### Example of file
 `pinball.lif`
+
 ![pinball](images/pinball.gif)
+
 `wing.lif`
+
 ![wing](images/wing.gif)
